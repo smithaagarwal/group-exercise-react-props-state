@@ -40,10 +40,14 @@ function App() {
       <ChuckInfo whalesSaved={whalesSaved} roundHouseKicks={roundHouseKicks} />
 
       <h2>Jokes: </h2>
-      <ChuckJoke jokes={jokes} />
+      {jokes.map((joke) => (
+        <ChuckJoke key={joke.id} joke={joke} />
+      ))}
 
       <h2>Filtered Jokes: </h2>
-      <ChuckJoke jokes={filteredJokes} />
+      {filteredJokes.map((joke) => (
+        <ChuckJoke key={joke.id} joke={joke} />
+      ))}
     </div>
   );
 }
